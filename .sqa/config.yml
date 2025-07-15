@@ -6,7 +6,7 @@ config:
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/demichie/OpenPDAC-13:
       branch: main
-      repo: https://github.com/demichie/OpenPDAC-13/
+      repo: https://github.com/demichie/OpenPDAC-13
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -15,56 +15,56 @@ sqa_criteria:
     repos:
       github.com/demichie/OpenPDAC-13 git:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-salmon-cow.sh
-        container: qc.acc_woozy-coral-catfish
+        - /usr/bin/env sh .sqa/script.craggy-khaki-giraffe.sh
+        container: qc.acc_boozy-wheat-spoonbill
   QC.Doc:
     repos:
       github.com/demichie/OpenPDAC-13 find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.leaky-yellow-horse.sh
-        container: qc.doc_crappy-puce-giraffe
+        - /usr/bin/env sh .sqa/script.beady-azure-harrier.sh
+        container: qc.doc_queasy-bistre-cuttlefish
       github.com/demichie/OpenPDAC-13 git:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-asparagus-dog.sh
-        container: qc.doc_hilly-silver-dragon
+        - /usr/bin/env sh .sqa/script.lumpy-orange-swan.sh
+        container: qc.doc_cranky-viridian-tzu
       github.com/demichie/OpenPDAC-13 markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-chocolate-barnacle.sh
-        container: qc.doc_skanky-scarlet-dormouse
+        - /usr/bin/env sh .sqa/script.muzzy-brown-rat.sh
+        container: qc.doc_hazy-sangria-baboon
   QC.Lic:
     repos:
       github.com/demichie/OpenPDAC-13 licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.wiggy-crimson-dodo.sh
-        container: qc.lic_tacky-purple-mole
+        - /usr/bin/env sh .sqa/script.gamy-khaki-centipede.sh
+        container: qc.lic_flaky-cerise-rhinoceros
   QC.Met:
     repos:
       github.com/demichie/OpenPDAC-13 cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.pretty-indigo-squirrel.sh
-        container: qc.met_scaly-chartreuse-okapi
+        - /usr/bin/env sh .sqa/script.freaky-thistle-bat.sh
+        container: qc.met_crappy-indigo-burmese
   QC.Sec:
     repos:
       github.com/demichie/OpenPDAC-13 bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-denim-fousek.sh
-        container: qc.sec_queasy-zucchini-bandicoot
+        - /usr/bin/env sh .sqa/script.randy-firebrick-koala.sh
+        container: qc.sec_snoopy-lavender-octopus
   QC.Sty:
     repos:
       github.com/demichie/OpenPDAC-13 flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-cerulean-dane.sh
-        container: qc.sty_cranky-carmine-sponge
+        - /usr/bin/env sh .sqa/script.tasty-ultramarine-penguin.sh
+        container: qc.sty_snazzy-cardinal-tiger
   QC.Uni:
     repos:
       github.com/demichie/OpenPDAC-13 pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.cloudy-pink-crocodile.sh
-        container: qc.uni_whiny-mustard-donkey
+        - /usr/bin/env sh .sqa/script.snappy-olive-lizard.sh
+        container: qc.uni_chewy-carmine-maltese
   QC.Ver:
     repos:
       github.com/demichie/OpenPDAC-13 get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.shaky-charcoal-reindeer.sh
-        container: qc.ver_squeaky-lime-stoat
+        - /usr/bin/env sh .sqa/script.squirrely-myrtle-bison.sh
+        container: qc.ver_lovely-jade-turkey
 timeout: 5400
