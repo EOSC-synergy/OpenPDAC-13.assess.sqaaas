@@ -1,0 +1,64 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/demichie/OpenPDAC-13:
+      branch: main
+      repo: https://github.com/demichie/OpenPDAC-13/
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/demichie/OpenPDAC-13 git:
+        commands:
+        - /usr/bin/env sh .sqa/script.scummy-corn-swan.sh
+        container: qc.acc_thirsty-periwinkle-angelfish
+  QC.Doc:
+    repos:
+      github.com/demichie/OpenPDAC-13 find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.snippy-eggplant-mau.sh
+        container: qc.doc_wheezy-corn-cuscus
+      github.com/demichie/OpenPDAC-13 git:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-brown-mule.sh
+        container: qc.doc_stinky-amaranth-armadillo
+      github.com/demichie/OpenPDAC-13 markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleepy-zucchini-dachshund.sh
+        container: qc.doc_zippy-lilac-vulture
+  QC.Lic:
+    repos:
+      github.com/demichie/OpenPDAC-13 licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.surly-grey-bison.sh
+        container: qc.lic_gummy-russet-impala
+  QC.Sec:
+    repos:
+      github.com/demichie/OpenPDAC-13 bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.dorky-rose-fowl.sh
+        container: qc.sec_thirsty-razzmatazz-chihuahua
+  QC.Sty:
+    repos:
+      github.com/demichie/OpenPDAC-13 flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.squirrely-amaranth-squirrel.sh
+        container: qc.sty_cheeky-purple-akbash
+  QC.Uni:
+    repos:
+      github.com/demichie/OpenPDAC-13 pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-copper-koala.sh
+        container: qc.uni_skimpy-taupe-scorpion
+  QC.Ver:
+    repos:
+      github.com/demichie/OpenPDAC-13 get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.snazzy-zucchini-beagle.sh
+        container: qc.ver_snappy-fuchsia-turtle
+timeout: 5400
